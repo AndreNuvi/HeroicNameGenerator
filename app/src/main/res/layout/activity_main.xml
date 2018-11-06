@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/backMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#060825"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="2dp"
+    tools:context="heroicnamegenerator.anuvi.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/iconsimple2"
+                tools:ignore="ContentDescription" />
+
+            <EditText
+                android:id="@+id/yourNameEditTextActivityMainId"
+                style="@style/NamesStyle"
+                android:layout_marginTop="15dp"
+                android:hint="@string/your_name" />
+
+            <EditText
+                android:id="@+id/yourSurnameEditTextActivityMainId"
+                style="@style/NamesStyle"
+                android:hint="@string/your_last_name" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:shrinkColumns="*"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/resetButtonActivityMainID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:background="#001940"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="@string/reset"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp" />
+
+                    <Button
+                        android:id="@+id/generateButtonActivityMainID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:background="#001940"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="random"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp" />
+                </TableRow>
+
+            </TableLayout>
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="10dp"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/banner_ad_unit_id" />
+
+
+            <Button
+                android:id="@+id/checkYourDragonNameButtonActivityMainID"
+                android:layout_width="320dp"
+                android:layout_gravity="center"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:background="#258CEB"
+                android:text="@string/check_your_dragon_name"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
+
