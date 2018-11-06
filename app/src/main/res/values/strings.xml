@@ -11,6 +11,8 @@
     <string name="reset" translatable="false">reset</string>
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-4844192903995686/6921944654</string>
     <string name="your_entries_are_used_only_for_generate_dragon_name_and_are_not_collected" translatable="false">Your entries are used only for generate dragon name and are not collected</string>
+    <string name="random">random</string>
+    <string name="privacy_policy">Privacy Policy</string>
 </resources>
 
 
