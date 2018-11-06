@@ -1,0 +1,3 @@
+# HeroicNameGenerator
+
+Simple app
