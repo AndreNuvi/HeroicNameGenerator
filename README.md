@@ -1,3 +1,3 @@
 # HeroicNameGenerator
 
-Simple app
+Simple app that generates name from inputs
