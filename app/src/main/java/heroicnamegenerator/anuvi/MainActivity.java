@@ -1,6 +1,6 @@
 package heroicnamegenerator.anuvi;
 
-import android.support.v7.app.AppCompatActivity;;
+import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,14 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     String yourName;
     String yourLastName;
-
     String heroicName;
-
     EditText editText1;
     EditText editText2;
-    Button buttonGenerate;
-    Button buttonReset;
-    Button random;
     int buttonClicked;
 
     InterstitialAd mInterstitialAd;
@@ -40,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.mainmenu, menu);
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -60,20 +54,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        editText1 = (EditText) findViewById(R.id.yourNameEditTextActivityMainId);
-        editText2 = (EditText) findViewById(R.id.yourSurnameEditTextActivityMainId);
-        buttonGenerate = (Button) findViewById(R.id.checkYourDragonNameButtonActivityMainID);
-        buttonReset = (Button) findViewById(R.id.resetButtonActivityMainID);
-        random = (Button) findViewById(R.id.generateButtonActivityMainID);
+        editText1 = findViewById(R.id.yourNameEditTextActivityMainId);
+        editText2 = findViewById(R.id.yourSurnameEditTextActivityMainId);
+        Button buttonGenerate = findViewById(R.id.checkYourDragonNameButtonActivityMainID);
+        Button buttonReset = findViewById(R.id.resetButtonActivityMainID);
+        Button random = findViewById(R.id.generateButtonActivityMainID);
 
 
         //Banner Ad
         MobileAds.initialize(getApplicationContext(), "ca-app-pub-4844192903995686~5445211452");
-        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-
-
 
 
         buttonGenerate.setOnClickListener(new View.OnClickListener() {
@@ -99,18 +91,17 @@ public class MainActivity extends AppCompatActivity {
         random.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonClicked=2;
+                buttonClicked = 2;
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
                 } else {
                     generateRandom();
                 }
 
-
             }
         });
 
-        //Interstitial Ad between this and nex Activity
+        //Interstitial Ad between this and next Activity
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-4844192903995686/8398677857");
         mInterstitialAd.setAdListener(new AdListener() {
@@ -184,19 +175,8 @@ public class MainActivity extends AppCompatActivity {
         int min = 0;
         int max = 25;
         Random r = new Random();
-        int i1 = r.nextInt(max - min + 1) + min;
-        return i1;
+        return r.nextInt(max - min + 1) + min;
     }
 
-
-//    @Override
-//    protected void onStart() {
-//        //Reward ad boolean reset
-//        boolean reward = false;
-//        SharedPreferences.Editor editor = getSharedPreferences("Reward", MODE_PRIVATE).edit();
-//        editor.putBoolean("Reward", reward);
-//        editor.apply();
-//        super.onStart();
-//    }
 
 }
