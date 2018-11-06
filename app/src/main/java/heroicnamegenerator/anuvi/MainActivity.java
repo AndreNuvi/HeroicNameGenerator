@@ -21,14 +21,11 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    String yourName;
-    String yourLastName;
-    String heroicName;
-    EditText editText1;
-    EditText editText2;
-    int buttonClicked;
+    private EditText editText1;
+    private EditText editText2;
+    private int buttonClicked;
 
-    InterstitialAd mInterstitialAd;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -128,8 +125,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void beginGenerateDragonName() {
 
-        yourName = editText1.getText().toString();
-        yourLastName = editText2.getText().toString();
+        String yourName = editText1.getText().toString();
+        String yourLastName = editText2.getText().toString();
 
 
         if (yourName.length() == 0) {
@@ -144,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             String lastLettersOfYourName = yourName.substring(yourName.length() - 1);
             String firstLetterYourLastName = yourLastName.substring(0, 1);
 
-            heroicName = firstLettersOfYourName.toLowerCase() + lastLettersOfYourName.toLowerCase() + firstLetterYourLastName.toLowerCase();
+            String heroicName = firstLettersOfYourName.toLowerCase() + lastLettersOfYourName.toLowerCase() + firstLetterYourLastName.toLowerCase();
 
 
             //Send intent
@@ -171,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public int makeRandomLetters() {
+    private int makeRandomLetters() {
         int min = 0;
         int max = 25;
         Random r = new Random();

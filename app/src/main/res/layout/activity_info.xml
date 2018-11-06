@@ -9,7 +9,8 @@
     android:paddingEnd="16sp"
     tools:context="heroicnamegenerator.anuvi.InfoActivity"
     android:paddingLeft="16dp"
-    android:paddingRight="16sp">
+    android:paddingRight="16sp"
+    tools:ignore="Overdraw">
 
 
 

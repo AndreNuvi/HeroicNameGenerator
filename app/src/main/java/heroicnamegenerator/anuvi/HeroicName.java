@@ -7,11 +7,12 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+@SuppressWarnings("ALL")
 public class HeroicName extends AppCompatActivity {
 
-    String name;
-    String lastname;
-    String heroicTitle;
+    private String name;
+    private String lastname;
+    private String heroicTitle;
 
 
     @Override
